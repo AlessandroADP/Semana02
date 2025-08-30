@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudiantes</title>
+</head>
+<body>
+    <h1>Notas de Estudiantes</h1>
+    <table>
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Nota</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each estudiantes}}
+        <tr>
+            <td>{{this.nombre}}</td>
+            <td>
+            {{#mayorA this.nota 15}}
+                <strong>{{this.nota}}</strong>
+            {{else}}
+                {{this.nota}}
+            {{/mayorA}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+    </table>
+</body>
+</html>
